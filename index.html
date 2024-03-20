@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Portal</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img  src="./images/115-1159142_job-portal-icon-in-png.png" alt="">
+           <span>Employee Portal</span> 
+        </div>
+        <span><a onclick="logout()" href="#logout">Logout</a></span>
+    </header>
+   <h1 class="headings">
+    <span class="firsthead">Welcome</span>
+    <span id="displayUser" class="lasthead">Max Miller</span>
+   </h1>
+    
+</body>
+
+<script>
+    if(sessionStorage.getItem("username")){
+        displayUser.innerHTML=sessionStorage.getItem("username")?.split(" ")[0]
+    }else{
+        alert("Please Login")
+        window.location="login.html"
+    }
+
+    const logout = ()=>{
+        sessionStorage.clear();
+        window.location="login.html"
+
+    }
+</script>
+
+</html>
